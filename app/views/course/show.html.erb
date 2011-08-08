@@ -1,0 +1,25 @@
+<h1><%= @course.cname %></h1>
+<h3><i>Description</i></h3>
+ <%= @course.description %>
+
+<h3><i>Study Materials</i></h3>
+<p><%= link_to "Add New Study Material", {:controller => 'updownload', :action => 'newMaterial' }%>
+<h3><i>Assignments</i></h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Max Marks</th>
+  </tr>
+<% @assgns.each do |assgn| %>
+  <tr>
+    <td><%= assgn.id %></td>
+    <td><%= assgn.name %></td>
+    <td><%= assgn.maxMarks %></td>
+  </tr>
+</table>
+<% end %>
+<p><%= link_to "Add New Assignment", {:controller => 'updownload', :action => 'newAssgn' }%>
+<h3><i>Tests</i></h3> 
+<p><%= link_to "Add New Test", {:controller => 'updownload', :action => 'newTest' }%>

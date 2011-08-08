@@ -1,0 +1,22 @@
+<h2>Update Info Page for teacher</h2>
+
+        <h2><p>Welcome <%= @teacher.uname %>
+        <%= form_for(@teacher, :url => {:controller => "teacher", :action => "update_process" }) do |f| %>
+        <%= f.label :'User Name :' %>
+        <%= f.text_field :uname, :value =>@teacher.uname %><br />
+        <%= f.label :'Name :' %>
+        <%= f.text_field :name %><br />
+        <%= f.label :'Date of Birth :' %>
+        <%= f.date_select :dob %><br />
+        <%= f.label :'Year of joining :' %>
+        <%= f.text_field :yoj %><br />
+        <%= f.label :'Department :' %>
+        <%= f.text_field :department %><br />
+        <%= f.label :'Phone number :' %>
+        <%= f.text_field :phone %><br />
+        <%= f.label :'Email Id :' %>
+        <%= f.text_field :email %><br />
+        <%= f.submit :'Submit' %>
+       
+        <%= flash[:notice]%>
+<% end %>

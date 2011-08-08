@@ -1,0 +1,9 @@
+<h2>sLogin</h2>
+<% if session[:user_id] %>
+        <h2><p>Welcome <%= User.find(session[:user_id]).uName %>
+        <p><%= link_to "Logout", {:controller =>'home', :action => 'logout' }%>
+          <%= flash[:notice]%> <br/>
+          <p><%= link_to "Change Password", {:controller => 'home', :action => 'change_password' }%></br>
+            <p><%= link_to "Show My Info", {:controller => 'student', :action => 'showInfo' }%>
+            <p><%= link_to "Update Your Info", {:controller => 'student', :action => 'updateInfo' }%>
+            <% end %>

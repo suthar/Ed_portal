@@ -1,0 +1,17 @@
+<h2>Login</h2>
+<% if session[:user_id] %>
+        <h2><p>Welcome <%= User.find(session[:user_id]).uName %>
+        <p><%= link_to "Logout", {:action => 'logout' }%>
+          <p><%= link_to "Change Password", {:controller => 'home', :action => 'change_password' }%>
+ <% else %>
+        <%= form_for(@user, :url => {:controller => "home", :action => "process_login" }) do |f| %>
+        <%= f.label :'Login as' %>
+        <%= f.select :uRole, [['admin','Admin'],['teacher','Teacher'],['student','Student']] %><br />
+        <%= f.label :UserName %><br />
+        <%= f.text_field :uName %><br />
+        <%= f.label :Password %><br />
+        <%= f.password_field :uPassword %>
+        <%= f.submit :'Sign In' %>
+        <% end %>
+        <%= flash[:notice]%>
+<% end %>

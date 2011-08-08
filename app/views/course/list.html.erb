@@ -1,0 +1,29 @@
+<h1>My Courses</h1>
+<h2>Listing posts</h2>
+ 
+	<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.id %></td>
+    <td><%= course.description %></td>
+    <td><%= course.cname %></td>
+    <td><%= course.description %></td>
+    <td><%= link_to "Show", {:controller => 'course', :action => 'show', :id => course.id }%></td>
+    <td><%= link_to 'Edit', {:controller => 'course', :action => 'edit' }%></td>
+    <td><%= link_to 'Destroy', {:controller => 'course', :action => 'destroy', :confirm => 'Are You Sure?' }%></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+ 
+<p><%= link_to "Create a New Course", {:controller => 'course', :action => 'new' }%>

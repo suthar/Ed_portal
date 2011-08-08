@@ -1,0 +1,37 @@
+<p>
+  <b>User Name:</b>
+  <%= @student.rollNo %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @student.name %>
+</p>
+
+<p>
+  <b>Date of Birth:</b>
+  <%= @student.dob %>
+</p>
+
+<p>
+  <b>Year of Joining:</b>
+  <%= @student.yoj %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @student.department %>
+</p>
+
+<p>
+  <b>phone Number:</b>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <b>Email Id:</b>
+  <%= @student.email %>
+</p>
+
+<p><%= link_to "Back", {:controller => 'student', :action => 'sHome' }%>
+

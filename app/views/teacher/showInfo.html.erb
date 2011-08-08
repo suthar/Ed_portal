@@ -1,0 +1,36 @@
+<p>
+  <b>User Name:</b>
+ <%= @teacher.name %>
+</p>
+
+<p>
+  <b>Name:</b>
+   <%= @teacher.name %>
+</p>
+
+<p>
+  <b>Date of Birth:</b>
+  <%= @teacher.dob %>
+</p>
+
+<p>
+  <b>Year of Joining:</b>
+  <%= @teacher.yoj %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @teacher.department %>
+</p>
+
+<p>
+  <b>phone Number:</b>
+  <%= @teacher.phone %>
+</p>
+
+<p>
+  <b>Email Id:</b>
+  <%= @teacher.email %>
+</p>
+
+<p><%= link_to "Back", {:controller => 'teacher', :action => 'tHome' }%>

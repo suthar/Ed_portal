@@ -1,0 +1,12 @@
+<h2>Create a New course</h2>
+
+<p>
+        <%= form_for(@course, :url => {:controller => "course", :action => "create" }) do |f| %>
+        <%= f.label :'course Name :' %>
+        <%= f.text_field :cname %><br />
+        <%= f.label :'Description :' %>
+        <%= f.text_area :description %><br />
+        <%= f.submit :'Submit' %>
+       
+        <%= flash[:notice]%>
+<% end %>

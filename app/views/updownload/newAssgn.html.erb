@@ -1,0 +1,10 @@
+<h1>Add New Assignment</h1>
+<% form_for(:assignment,:url => {:action => 'addNewAssgn'},:html => { :multipart => true }) do |form| %>
+Title:<%= form.text_field("name") %><br/> 
+Guidlilne:<%= form.text_area("guideline") %><br/>
+Date Of Submission:<%= form.date_select("dateOfSubmission") %><br/>
+Maximum Marks:<%= form.text_field("maxMarks") %><br/>
+Upload your file: <%= form.file_field("datafile") %><br/>
+<%= submit_tag("Submit") %>
+<% end %>
+
